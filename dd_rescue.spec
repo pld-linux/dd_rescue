@@ -26,7 +26,8 @@ tego nie robi.
 
 %build
 rm -f missing
-%{__make}
+%{__make} \
+	EXTRA_CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
