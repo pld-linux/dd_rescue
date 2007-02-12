@@ -1,5 +1,5 @@
 Summary:	Data copying in presence of I/O errors
-Summary(pl):	Kopiowanie danych z b³êdami we/wy
+Summary(pl.UTF-8):   Kopiowanie danych z bÅ‚Ä™dami we/wy
 Name:		dd_rescue
 Version:	1.12
 Release:	1
@@ -15,10 +15,10 @@ dd_rescue helps, when nobody else will: Your disk has crashed and you
 try to copy it over to another one. Standard Un*x tools like cp, cat,
 dd will abort on every I/O error. dd_rescue won't.
 
-%description -l pl
-dd_rescue pomaga tam, gdzie nic innego nie pomo¿e: kiedy dysk padnie i
-próbujemy go skopiowaæ na inny. Standardowe narzêdzia uniksowe takie
-jak cp, cat, dd koñcz± dzia³anie na ka¿dym b³êdzie we/wy. dd_rescue
+%description -l pl.UTF-8
+dd_rescue pomaga tam, gdzie nic innego nie pomoÅ¼e: kiedy dysk padnie i
+prÃ³bujemy go skopiowaÄ‡ na inny. Standardowe narzÄ™dzia uniksowe takie
+jak cp, cat, dd koÅ„czÄ… dziaÅ‚anie na kaÅ¼dym bÅ‚Ä™dzie we/wy. dd_rescue
 tego nie robi.
 
 %prep
