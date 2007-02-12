@@ -1,5 +1,5 @@
 Summary:	Data copying in presence of I/O errors
-Summary(pl.UTF-8):   Kopiowanie danych z błędami we/wy
+Summary(pl.UTF-8):	Kopiowanie danych z błędami we/wy
 Name:		dd_rescue
 Version:	1.12
 Release:	1
