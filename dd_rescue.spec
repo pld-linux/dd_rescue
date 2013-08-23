@@ -1,13 +1,14 @@
 Summary:	Data copying in presence of I/O errors
 Summary(pl.UTF-8):	Kopiowanie danych z błędami we/wy
 Name:		dd_rescue
-Version:	1.35
+Version:	1.40
 Release:	1
 License:	GPL v2 or v3
 Group:		Applications/System
 Source0:	http://www.garloff.de/kurt/linux/ddrescue/%{name}-%{version}.tar.gz
-# Source0-md5:	6e97fc23d42bfde40eccf9b02023157e
+# Source0-md5:	690bc25884272461d994aca10f620b98
 URL:		http://www.garloff.de/kurt/linux/ddrescue/
+BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -25,13 +26,22 @@ tego nie robi.
 %setup -q -n %{name}
 
 %build
+%{__autoconf}
+%{__autoheader}
+%configure
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} %{rpmldflags}"
+	CFLAGS="%{rpmcflags} %{rpmldflags} -DHAVE_CONFIG_H" \
+	CFLAGS_OPT='$(CFLAGS)' \
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -D dd_rescue $RPM_BUILD_ROOT%{_bindir}/dd_rescue
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	INSTALLDIR=$RPM_BUILD_ROOT%{_bindir} \
+	INSTALLFLAGS= \
+	INSTASROOT=
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -40,3 +50,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.dd_rescue
 %attr(755,root,root) %{_bindir}/dd_rescue
+%{_mandir}/man1/dd_rescue.1*
