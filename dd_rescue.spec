@@ -1,12 +1,12 @@
 Summary:	Data copying in presence of I/O errors
 Summary(pl.UTF-8):	Kopiowanie danych z błędami we/wy
 Name:		dd_rescue
-Version:	1.98
-Release:	2
+Version:	1.99
+Release:	1
 License:	GPL v2 or v3
 Group:		Applications/System
 Source0:	http://www.garloff.de/kurt/linux/ddrescue/%{name}-%{version}.tar.bz2
-# Source0-md5:	4f4f6dce4eada9efa6dd802fd8e107b3
+# Source0-md5:	b6941bc6cb4879d9b061e08691b77c82
 URL:		http://www.garloff.de/kurt/linux/ddrescue/
 BuildRequires:	autoconf
 BuildRequires:	lzo-devel >= 2.07
