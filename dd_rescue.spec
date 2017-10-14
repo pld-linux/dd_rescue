@@ -34,8 +34,8 @@ tego nie robi.
 %configure
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} %{rpmldflags} -DHAVE_CONFIG_H" \
-	CFLAGS_OPT='$(CFLAGS)' \
+	RPM_OPT_FLAGS="%{rpmcflags}" \
+	EXTRA_LDFLAGS="%{rpmldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
