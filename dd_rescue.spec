@@ -1,16 +1,17 @@
 Summary:	Data copying in presence of I/O errors
 Summary(pl.UTF-8):	Kopiowanie danych z błędami we/wy
 Name:		dd_rescue
-Version:	1.99.15
+Version:	1.99.17
 Release:	1
 License:	GPL v2 or v3
 Group:		Applications/System
 Source0:	http://www.garloff.de/kurt/linux/ddrescue/%{name}-%{version}.tar.bz2
-# Source0-md5:	27700bff7ffc274b7a50ea096e4df2de
+# Source0-md5:	41c1622e1231a5089a799e6a3f830f69
 URL:		http://www.garloff.de/kurt/linux/ddrescue/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	lzo-devel >= 2.07
 BuildRequires:	openssl-devel
+BuildRequires:	xz-devel
 Requires:	lzo >= 2.07
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -61,7 +62,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libddr_crypt.so
 %attr(755,root,root) %{_libdir}/libddr_hash.so
 %attr(755,root,root) %{_libdir}/libddr_null.so
+%attr(755,root,root) %{_libdir}/libddr_lzma.so
 %attr(755,root,root) %{_libdir}/libddr_lzo.so
 %{_mandir}/man1/dd_rescue.1*
 %{_mandir}/man1/ddr_crypt.1*
+%{_mandir}/man1/ddr_lzma.1*
 %{_mandir}/man1/ddr_lzo.1*
